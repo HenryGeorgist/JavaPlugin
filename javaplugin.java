@@ -1,5 +1,3 @@
-import java.io.Console;
-
 public class javaplugin  {
     public static final String PluginName = "javaplugin";
     /**
