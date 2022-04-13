@@ -5,9 +5,20 @@
 		"model_configuration_path": "/workspaces/JavaPlugin/configs/max.json"
 	},
 	"model_links": {
-		"linked_inputs": [],
+		"linked_inputs": [{
+			"input": {
+				"name": "hydrograph",
+				"parameter": "flow",
+				"format": ".csv"
+			},
+			"source": {
+				"name": "/workspaces/JavaPlugin/configs/hsm.csv",
+				"parameter": "flow",
+				"format": ".csv"
+			}
+		}],
 		"required_outputs": [{
-			"name": "hydrograph1",
+			"name": "max",
 			"parameter": "flow",
 			"format": ".csv"
 		}]
