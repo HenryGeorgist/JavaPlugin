@@ -51,7 +51,7 @@ public class StatFinderModelComputable {
                            if(d>stat) stat = d;
                        }
                    }
-                   //write output
+                   //write output to the designated location
                }
            }
        }
