@@ -1,5 +1,5 @@
 public class StatFinderModel {
-    public String Name;
-    public Input[] Inputs;
-    public Output[] Outputs;
+    public String name;
+    public Input[] inputs;
+    public Output[] outputs;
 }
