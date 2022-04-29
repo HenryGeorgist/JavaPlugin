@@ -1,7 +1,13 @@
+package usace.wat.plugin.javaplugin;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import usace.wat.plugin.EventConfiguration;
+import usace.wat.plugin.LinkedInput;
+import usace.wat.plugin.ModelLinks;
+import usace.wat.plugin.Output;
 
 public class StatFinderModelComputable {
    public ModelLinks Linkages;
@@ -11,12 +17,12 @@ public class StatFinderModelComputable {
        Linkages = linkages;
    }
    public void Compute(EventConfiguration config){
-       for (LinkedInput li : Linkages.linked_inputs) {
-           for (Output o : Linkages.required_outputs) {
-               if (li.input.name.equals(o.name)){
+       for (LinkedInput li : Linkages.getLinked_inputs()) {
+           for (Output o : Linkages.getRequired_outputs()) {
+               if (li.getInput().getName().equals(o.getName())){
                    //fetch the input
                    //where is the input?
-                   String path = "/workspaces/config/" + li.input.name + ".csv";
+                   String path = "/workspaces/config/" + li.getInput().getName() + ".csv";
                    //create a destination array
                    ArrayList<Double> flowlist = new ArrayList<Double>();
                    //read the file
@@ -38,7 +44,7 @@ public class StatFinderModelComputable {
                     }
                    //compute the stat?
                    double stat = 0.0;
-                   switch (o.parameter){
+                   switch (o.getParameter()){
                        case "max"://compute max
                        stat = Double.MIN_VALUE;
                        for(Double d : flowlist){

@@ -1,4 +1,4 @@
-
+package usace.wat.plugin.javaplugin;
 public class javaplugin  {
     public static final String PluginName = "javaplugin";
     /**
